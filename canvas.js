@@ -41,7 +41,30 @@ function drawSmileFace() {
   }
 }
 
+function lineToDraw() {
+  var canvas = document.getElementById('canvas');
+  if(canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+  }
+
+  // Filled triangle
+  ctx.beginPath();
+  ctx.moveTo(20, 150);
+  ctx.lineTo(100, 150);
+  ctx.lineTo(20, 230);
+  ctx.fill();
+
+  // Stoked triangle
+  ctx.beginPath();
+  ctx.moveTo(120, 250);
+  ctx.lineTo(120, 180);
+  ctx.lineTo(40, 250);
+  ctx.closePath();
+  ctx.stroke();
+}
+
 /* Implementations */
 drawRectangle();
 drawPath();
 drawSmileFace();
+lineToDraw();
